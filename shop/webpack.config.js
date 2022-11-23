@@ -4,14 +4,15 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3003/",
   },
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
+
   devServer: {
-    port: 3001,
+    port: 3003,
     historyApiFallback: true,
   },
 
@@ -40,14 +41,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "pdp",
+      name: "shop",
       filename: "remoteEntry.js",
-      remotes: {
-        // home: "home@http://localhost:3000/remoteEntry.js", // o nome do remote é o mesmo que o nome do container dentro do webpack.config.js do container remoto (home)
-        home: "home@http://localhost:3000/remoteEntry.js",
-        shop: "shop@http://localhost:3003/remoteEntry.js",
+      remotes: {},
+      exposes: {
+        "./shop": "./src/App.tsx",
       },
-      exposes: {},
       shared: {
         ...deps,
         react: {

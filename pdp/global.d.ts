@@ -5,3 +5,9 @@ declare module "home/components" {
 
   export { Header, Footer, MainLayout };
 }
+
+declare module "shop/shop" {
+  const Shop: () => JSX.Element;
+
+  export { Shop };
+}

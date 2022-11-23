@@ -3,21 +3,21 @@ export const MainLayout = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<div>Home</div>} />
-
         <Route
-          path="/about"
+          path="/"
           element={
             <div>
-              <h1>About</h1>
+              <h1>home</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam
               </p>
               <br />
-              <button>a</button>
+
               <br />
-              <Link to="/contact">contact</Link>
+              <Link to="/contact" style={{ backgroundColor: "red" }}>
+                Página de contatos
+              </Link>
             </div>
           }
         />
@@ -26,7 +26,17 @@ export const MainLayout = () => {
           path="/contact"
           element={
             <div>
-              <h1>Contact</h1>
+              <h1>Página de contatos</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                dolor vitae eius fuga nobis, ratione facilis culpa saepe impedit
+                veritatis voluptate soluta ipsa corrupti. Delectus cumque
+                adipisci nam nihil neque!
+              </p>
+              <br />
+              <Link to=".." style={{ backgroundColor: "red" }}>
+                Voltar
+              </Link>
             </div>
           }
         />
