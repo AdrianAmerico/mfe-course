@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { Footer, Header } from "./components";
 import "./index.scss";
 
@@ -11,4 +11,8 @@ const App = () => (
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById("app"));
+createRoot(document.getElementById("app")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
