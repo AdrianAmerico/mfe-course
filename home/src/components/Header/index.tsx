@@ -1,9 +1,12 @@
-import React from "react";
+interface HeaderProps {
+  name: string;
+}
 
-export const Header = () => {
+export const Header = ({ name }: HeaderProps) => {
   return (
     <div className="p-5 bg-blue-500 text-white text-3xl font-bold">
-      Fidget Spinner World
+      My Header
+      {name}
     </div>
   );
 };
